@@ -4,7 +4,7 @@
  *
  * Saves login name, IP address and DNS name to database.
  *
- * @version 1.0
+ * @version 1.01
  * @license GNU GPLv3+
  * @author ashabada
  */
@@ -44,8 +44,7 @@ class login_history extends rcube_plugin
 			$_SESSION["logintime"] = $data['logintime'];
 			}
 
-		$identity = $user->get_identity();
-		$username = $identity['name'];
+		$username = $user->data['username'];
 		$remoteip = rcube_utils::remote_ip();
 		$remotedns = gethostbyaddr(rcube_utils::remote_ip());
 		if ($remoteip == $remotedns)
@@ -63,9 +62,9 @@ class login_history extends rcube_plugin
 		{
 		$rcmail = rcmail::get_instance();
 		$user = $rcmail->user;
-		$identity = $user->get_identity();
+		$username = $user->data['username'];
 		return array(
-			'content' => Q($identity['name']) . " (" . Q($this->gettext('lastlogin')) . 
+			'content' => Q($username) . " (" . Q($this->gettext('lastlogin')) . 
 			'<a href="./?_action=plugin.login_history" class="about-link">' . 
 			Q($_SESSION['remoteip']) . " " . Q($_SESSION['logintime']) . "</a>" . ")"
 		);
