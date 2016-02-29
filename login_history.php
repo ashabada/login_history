@@ -46,7 +46,11 @@ class login_history extends rcube_plugin
 
 		$username = $user->data['username'];
 		$remoteip = rcube_utils::remote_ip();
-		$remotedns = gethostbyaddr(rcube_utils::remote_ip());
+                if(strpos($remoteip, '('))
+                        {
+                        $remoteip = substr($remoteip, 0, strpos($remoteip, '('));
+                        }
+                $remotedns = gethostbyaddr($remoteip);
 		if ($remoteip == $remotedns)
 			{
 			$remotedns = "----";
