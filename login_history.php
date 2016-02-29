@@ -4,7 +4,7 @@
  *
  * Saves login name, IP address and DNS name to database.
  *
- * @version 1.01
+ * @version 1.02
  * @license GNU GPLv3+
  * @author ashabada
  */
