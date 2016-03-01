@@ -4,8 +4,8 @@
     "description": "Plugin for Roundcube webmail. Saves users login, date, time, ip and DNS name to MySQL upon loging in.",
     "keywords": ["login","history"],
     "homepage": "https://github.com/ashabada/login_history",
-    "license": "GPLv3+",
-    "version": "1.02",
+    "license": "GPL-3.0+",
+    "version": "1.04",
     "authors": [
         {
             "name": "ashabada",
@@ -21,7 +21,8 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "roundcube/plugin-installer": ">=0.1.6"
+        "roundcube/plugin-installer": ">=0.1.6",
+	"geoip2/geoip2": "~2.0"
     },
     "support":
     {
