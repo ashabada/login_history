@@ -70,7 +70,7 @@ class login_history extends rcube_plugin
 		$user = $rcmail->user;
 		$username = $user->data['username'];
 		return array(
-			'content' => Q($username) . " (" . Q($this->gettext('lastlogin')) . '<a href="./?_action=plugin.login_history" class="about-link">' . Q($_SESSION['remoteip']) . " " . Q($_SESSION['logintime']) . "</a>" . ")"
+			'content' => rcube::Q($username) . " (" . rcube::Q($this->gettext('lastlogin')) . '<a href="./?_action=plugin.login_history" class="about-link">' . rcube::Q($_SESSION['remoteip']) . " " . rcube::Q($_SESSION['logintime']) . "</a>" . ")"
 		);
 		}
 
